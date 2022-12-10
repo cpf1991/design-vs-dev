@@ -1,4 +1,4 @@
-import { HStack, Flex, useDisclosure } from '@chakra-ui/react';
+import { HStack, Flex, useDisclosure, useColorModeValue } from '@chakra-ui/react';
 
 import Navigation from '../components/Navigation';
 import ChatHistorySidebar from '../components/ChatHistory/ChatHistorySidebar';
@@ -8,6 +8,7 @@ import ChatHistoryDrawer from '../components/ChatHistory/ChatHistoryDrawer';
 import ChatFilesDrawer from '../components/ChatFiles/ChatFilesDrawer';
 
 const IndexPage = () => {
+  const navbarColor = useColorModeValue("brand.100", "brandDark.500");
   const {
     isOpen: isChatHistoryOpen,
     onOpen: onChatHistoryOpen,
@@ -20,7 +21,7 @@ const IndexPage = () => {
   } = useDisclosure();
   return (
     <HStack h='100vh' spacing={0}>
-      <Flex as='nav' h='full' maxW={16} w='full' bg='gray.100'>
+      <Flex as='nav' h='full' maxW={16} w='full' bg={navbarColor}>
         <Navigation />
       </Flex>
       <Flex

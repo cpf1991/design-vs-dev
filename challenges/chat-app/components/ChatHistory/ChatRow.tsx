@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, VStack, useColorModeValue } from "@chakra-ui/react";
 
 const ChatRow = () => {
   return (
@@ -12,7 +12,7 @@ const ChatRow = () => {
       style={{ transition: "background 300ms" }}
       _hover={{ bg: "gray.50", cursor: "pointer" }}
     >
-      <Box rounded="full" bg="gray.100" minW={14} minH={14} />
+      <Box rounded="full" bg={useColorModeValue("gray.100", "gray.500")} minW={14} minH={14} />
       <VStack
         overflow="hidden"
         flex={1}

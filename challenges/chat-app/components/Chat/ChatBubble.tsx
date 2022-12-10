@@ -1,9 +1,10 @@
-import { VStack, Box, Text } from '@chakra-ui/react';
+import { VStack, Box, Text ,useColorModeValue } from '@chakra-ui/react';
 
 type Props = {
   message: string;
   dateSent: string;
-  from: "me" | "others";
+  // from: "me" | "others";
+  from: string;
 };
 
 const ChatBubble = ({ message, dateSent, from }: Props) => {
@@ -15,7 +16,8 @@ const ChatBubble = ({ message, dateSent, from }: Props) => {
   return (
     <VStack mt={6} alignItems={alignment} alignSelf={alignment}>
       <Box
-        bg={isMe ? "blue.50" : "gray.100"}
+        // bg={isMe ? "blue.50" : "gray.100"}
+        bg={isMe ? useColorModeValue( "blue.50","blue.500") : useColorModeValue("gray.100","gray.500", )}
         px={6}
         py={4}
         maxW={80}
